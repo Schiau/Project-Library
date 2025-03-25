@@ -7,6 +7,29 @@
 </head>
 <body>
     <h1>My library</h1>
+    <dialog autofocus>
+        <button autofocus>Close</button>
+        <form>
+            <lable>
+                Title: 
+                <input type="text" required id="title-input">
+            </lable>
+            <lable>
+                Author: 
+                <input type="text" required id="author-input">
+            </lable>
+            <lable>
+                Number of pages:
+                <input type="number" required min="0" id="pages-input">
+            </lable>
+            <lable>
+                Have you read it?
+                <input type="checkbox" required id="read-input">
+            </lable>
+        </form>
+        <button id="input-book-btn">Add new Book</button> 
+      </dialog>
+      <button>Add</button>
     <ul id="book-list"></ul>
 
     <script src="bookService.js"></script>
