@@ -47,6 +47,7 @@ function removeBookToLibrary(id) {
 function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
+    dialog.close();
 }
 
 function changeBookReadStatus(id){
@@ -92,13 +93,19 @@ inputBookButton.addEventListener("click", () => {
 
 function showBookElement(book) {
     const liElement = document.createElement('li');
+
+    const spanElem = document.createElement('span');
+    spanElem.textContent = book.info();
+
+    liElement.id = book.id;
+    liElement.appendChild(spanElem);
+
+    const containerElement = document.createElement('div');
     const delteBtnElement = createBtnDelete(book.id);
     const changeBtnElement = createBtnChangeStatus(book.id);
-
-    liElement.textContent = book.info();
-    liElement.id = book.id;
-    liElement.appendChild(delteBtnElement);
-    liElement.appendChild(changeBtnElement);
+    containerElement.appendChild(delteBtnElement);
+    containerElement.appendChild(changeBtnElement);
+    liElement.appendChild(containerElement);
     return liElement; 
 }
 

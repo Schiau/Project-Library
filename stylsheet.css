@@ -1,0 +1,223 @@
+:root {
+    --oxford-blue: #001B2E;
+    --charcoal: #294C60;
+    --french-gray: #ADB6C4;
+    --papaya-whip: #FFEFD3;
+    --peach: #FFC49B;
+
+    --height-header: 4rem;
+    --height-footer: 3rem;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    display: grid;
+    grid-template-rows: var(--height-header) 1fr var(--height-footer);
+    height: 100vh;
+    background-color: var(--papaya-whip);
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    gap: 0.6rem;
+    padding: 0 1rem;
+    background-color: var(--french-gray);
+}
+
+.header>h1{
+    display: flex;
+    flex-basis: 100%;
+    color: var(--oxford-blue);
+    font-size: 2.4rem;
+}
+
+.header>button{
+    display: flex;
+    flex-basis: 0;
+    background-color: var(--peach);
+    justify-content: center;
+    color: var(--oxford-blue);
+    padding: 0.8em 1.2em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 5rem;
+    font-size: 1rem;
+}
+
+.header > button:hover {
+    opacity: 0.8;
+    box-shadow: 4px 4px 10px var(--charcoal);
+    transform: translateY(-2px);
+}
+
+.footer{
+    background-color: rgba(41, 76, 96, 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-size: 1.2rem;
+}
+
+.github-logo{
+    width: 2.3rem;
+    transition: transform 0.5s ease-in-out;
+}
+
+.github-logo:hover {
+    transform: rotate(360deg);
+}
+
+maine{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    overflow-y: auto;
+    width: 100%;
+}
+
+maine>ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 2rem;
+}
+
+maine>ul>li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4em;
+    border-radius: 0.4em;
+}
+
+maine>ul>li:hover {
+    box-shadow: 4px 4px 10px var(--charcoal);
+    transform: translateY(-4px);
+}
+
+maine>ul>li:nth-child(2n){
+    background-color: var(--french-gray);
+}
+
+maine>ul>li:nth-child(2n+1){
+    background-color: var(--peach);
+}
+
+maine>ul>li>span{
+    flex-basis: 75%;
+}
+
+maine>ul>li>div{
+    display: flex;
+    flex-basis: 25%;
+    gap: 0.8rem;
+}
+
+maine>ul>li>div button{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+maine>ul>li:nth-child(2n)>div button{
+    background-color: var(--peach);
+}
+
+maine>ul>li:nth-child(2n+1)>div button{
+    background-color: var(--french-gray);
+}
+
+maine>ul>li>div button:hover {
+    opacity: 0.8;
+    box-shadow: 2px 2px 5px var(--charcoal);
+    transform: translateY(-2px);
+}
+
+dialog::backdrop{
+    background-color: rgba(10, 10, 10, 0.8);
+}
+
+dialog {
+    margin-top: 2rem;
+    justify-self: center;
+    width: 400px;
+    padding: 20px;
+    border: 2px solid var(--oxford-blue);
+    border-radius: 10px;
+    background-color: var(--papaya-whip);
+    box-shadow: 0 5px 15px var(--oxford-blue);
+}
+
+
+dialog>form>button,
+dialog>button{
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.4em 0.8em;
+    font-size: 1rem;
+    background-color: var(--peach);
+}
+
+dialog>form>button:hover,
+dialog>button:hover{
+    opacity: 0.8;
+    box-shadow: 2px 2px 5px var(--charcoal);
+    transform: translateY(-2px);
+}
+
+dialog>button{
+    margin-left: auto;
+    margin-right: 0.2em;
+}
+
+dialog>form{
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 10px;
+}
+
+
+dialog>form>label{
+    flex-basis: 100%;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+dialog>form>label>span {
+    flex-basis: 100%;
+}
+
+input[type="checkbox"] {
+    width: auto; 
+}
+
+
